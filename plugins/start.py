@@ -123,7 +123,7 @@ async def not_joined(client: Client, message: Message):
     buttons = [
         [
             InlineKeyboardButton(
-                "🌟Join Group 🌟",
+                "🌟 Join Group 🌟",
                 url = client.invitelink)
         ]
     ]
