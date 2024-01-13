@@ -27,7 +27,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
         except:
             pass
 
-  elif data == "start":
+  else data == "start":
         await query.message.edit_text(
             text=Txt.START_MSG.format(query.from_user.mention),
             disable_web_page_preview=True,
