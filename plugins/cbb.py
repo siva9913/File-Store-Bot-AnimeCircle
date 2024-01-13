@@ -14,7 +14,8 @@ async def cb_handler(client: Bot, query: CallbackQuery):
             reply_markup = InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("🔒 Close", callback_data = "close")
+                        InlineKeyboardButton("🔒 Close", callback_data = "close"),
+                        InlineKeyboardButton("⬅️ Close", callback_data = "start")
                     ]
                 ]
             )
@@ -30,13 +31,12 @@ async def cb_handler(client: Bot, query: CallbackQuery):
         await query.message.edit_text(
             text=Txt.START_MSG.format(query.from_user.mention),
             disable_web_page_preview=True,
-            reply_markup = InlineKeyboardMarkup([[
-                InlineKeyboardButton("👨‍💻 Dᴇᴠꜱ 👨‍💻", callback_data='dev')
-                ],[
-                InlineKeyboardButton('📯 Uᴩᴅᴀᴛᴇꜱ', url='https://t.me/PYRO_BOTZ'),
-                InlineKeyboardButton('💁‍♂️ Sᴜᴩᴩᴏʀᴛ', url='https://t.me/PYRO_BOTZ_CHAT')
-                ],[
-                InlineKeyboardButton('🎛️ Aʙᴏᴜᴛ', callback_data='about'),
-                InlineKeyboardButton('🛠️ Hᴇʟᴩ', callback_data='help')
-            ]])
+            reply_markup = InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton("🤖 About Me", callback_data = "about"),
+                    InlineKeyboardButton("🔒 Close", callback_data = "close")
+                ], [
+        InlineKeyboardButton('⛩️ OUR OTHER CHANNELS ⛩️', url='https://t.me/animemoviesr/3171'),
+    ]])
         )
