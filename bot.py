@@ -9,7 +9,7 @@ from pyrogram.enums import ParseMode
 import sys
 from datetime import datetime
 
-from config import API_HASH, APP_ID, LOGGER, TG_BOT_TOKEN, TG_BOT_WORKERS, FORCE_SUB_CHANNEL, CHANNEL_ID, PORT
+from config import API_HASH, APP_ID, LOGGER, TG_BOT_TOKEN, TG_BOT_WORKERS, FORCE_SUB_CHANNEL, FORCE_SUB_CHANNEL1, CHANNEL_ID, PORT
 
 class Bot(Client):
     def __init__(self):
@@ -32,10 +32,10 @@ class Bot(Client):
 
         if FORCE_SUB_CHANNEL:
             try:
-                link = (await self.get_chat(FORCE_SUB_CHANNEL)).invite_link
+                link = (await self.get_chat(FORCE_SUB_CHANNEL, FORCE_SUB_CHANNEL1)).invite_link
                 if not link:
-                    await self.export_chat_invite_link(FORCE_SUB_CHANNEL)
-                    link = (await self.get_chat(FORCE_SUB_CHANNEL)).invite_link
+                    await self.export_chat_invite_link(FORCE_SUB_CHANNEL, FORCE_SUB_CHANNEL1)
+                    link = (await self.get_chat(FORCE_SUB_CHANNEL, FORCE_SUB_CHANNEL1)).invite_link
                 self.invitelink = link
             except Exception as a:
                 self.LOGGER(__name__).warning(a)
