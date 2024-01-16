@@ -107,7 +107,8 @@ if Config.START_PIC:
             quote = True
         )       
   
-   else await message.reply_text(
+else:
+    await message.reply_text(
             text = START_MSG.format(
                 first = message.from_user.first_name,
                 last = message.from_user.last_name,
