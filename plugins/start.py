@@ -93,7 +93,12 @@ async def start_command(client: Client, message: Message):
                 ], [
         InlineKeyboardButton('⛩️ OUR OTHER CHANNELS ⛩️', url='https://t.me/animemoviesr/3171'),
     ]])
-                                    
+
+          if Config.START_PIC:
+        await message.reply_photo(Config.START_PIC, caption=Txt.START_MSG.format(user.mention), reply_markup=button)       
+    else:
+        await message.reply_text(text=Txt.START_MSG.format(user.mention), reply_markup=button, disable_web_page_preview=True)
+        
         
         await message.reply_text(
             text = START_MSG.format(
@@ -109,7 +114,7 @@ async def start_command(client: Client, message: Message):
         )
         return
 
-    
+   
 #=====================================================================================##
 
 WAIT_MSG = """"<b>Processing ...</b>"""
