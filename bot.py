@@ -32,10 +32,13 @@ class Bot(Client):
 
         if FORCE_SUB_CHANNEL:
             try:
-                link = (await self.get_chat(FORCE_SUB_CHANNEL, FORCE_SUB_CHANNEL1)).invite_link
+                link = (await self.get_chat(FORCE_SUB_CHANNEL)).invite_link
+                link = (await self.get_chat(FORCE_SUB_CHANNEL1)).invite_link
+                
                 if not link:
                     await self.export_chat_invite_link(FORCE_SUB_CHANNEL, FORCE_SUB_CHANNEL1)
-                    link = (await self.get_chat(FORCE_SUB_CHANNEL, FORCE_SUB_CHANNEL1)).invite_link
+                    link = (await self.get_chat(FORCE_SUB_CHANNEL)).invite_link
+                    link = (await self.get_chat(FORCE_SUB_CHANNEL1)).invite_link
                 self.invitelink = link
             except Exception as a:
                 self.LOGGER(__name__).warning(a)
