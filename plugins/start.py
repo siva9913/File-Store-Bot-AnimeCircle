@@ -94,8 +94,8 @@ async def start_command(client: Client, message: Message):
         InlineKeyboardButton('⛩️ OUR OTHER CHANNELS ⛩️', url='https://t.me/animemoviesr/3171'),
     ]])
 
-if START_PIC:
-        message.reply_photo(Config.START_PIC, text = START_MSG.format(
+if config.START_PIC:
+        await message.reply_photo(config.START_PIC, text = START_MSG.format(
                 first = message.from_user.first_name,
                 last = message.from_user.last_name,
                 username = None if not message.from_user.username else '@' + message.from_user.username,
@@ -108,7 +108,7 @@ if START_PIC:
         )       
   
 else:
-         message.reply_text(
+         await message.reply_text(
             text = START_MSG.format(
                 first = message.from_user.first_name,
                 last = message.from_user.last_name,
