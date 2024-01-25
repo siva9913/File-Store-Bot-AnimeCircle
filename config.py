@@ -35,8 +35,6 @@ DB_NAME = os.environ.get("DATABASE_NAME", "filesharexbot")
 FORCE_SUB_CHANNEL = int(os.environ.get("FORCE_SUB_CHANNEL", "0"))
 FORCE_SUB_CHANNEL1 = int(os.environ.get("FORCE_SUB_CHANNEL1", "0"))
 
-#start pic
-START_PIC = os.environ.get("START_PIC","https://telegra.ph/file/1b27c7a2b6a0971bbb561.jpg")
 
 TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 
