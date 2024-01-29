@@ -9,7 +9,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
     data = query.data
     if data == "about":
         await query.message.edit_text(
-                        text = f"<b>About this Bot:\n  A Telegram Bot for storing posts or files that can be accessed via a Special Link.\n\n○ Owner: <a href='https://t.me/Shidoteshika1'>The King 🜲</a>\n○ Anime Channel: <a href='https://t.me/Animemoviesr'>Infinity Void</a>\n○ Anime Group: <a href='https://t.me/ChatBox480'>Anime Circle™</a>\n\n👨‍💻 Modified by @Shidoteshika</b>",
+                        text = f"<b>About this Bot:\n\n  A Telegram Bot for storing posts or files that can be accessed via a Special Link.\n\n○ Owner: <a href='https://t.me/Shidoteshika1'>The King 🜲</a>\n○ Anime Channel: <a href='https://t.me/Animemoviesr'>Infinity Void</a>\n○ Anime Group: <a href='https://t.me/ChatBox480'>Anime Circle™</a>\n\n👨‍💻 Modified by @Shidoteshika1</b>",
             disable_web_page_preview = True,
             reply_markup = InlineKeyboardMarkup(
                 [
