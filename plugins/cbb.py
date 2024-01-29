@@ -14,14 +14,11 @@ async def cb_handler(client: Bot, query: CallbackQuery):
             reply_markup = InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("🔒 Close", callback_data = "close"),
-                        InlineKeyboardButton("⬅️ Back", callback_data = "back")
-                    ]
-                ]
-            )
-        )
-
- if data == "back":
+                        InlineKeyboardButton('🔒 Close', callback_data = 'close'),
+                        InlineKeyboardButton('⬅️ Back', callback_data = 'back')
+                    ]])
+                  )
+ elif data == "back":
         await query.message.edit_text(
             text = f"<b>○ Creator : <a href='https://t.me/shidoteshika1'>The king 🜲</a>\n○ Language : <code>Python3</code>\n○ Library : Pyrogram asyncio {__version__}</a>\n○ Support Group : <a href='https://t.me/chatbox480'>Aɴɪᴍᴇ Cɪʀᴄʟᴇ 🜲</a></b>",
             disable_web_page_preview = True,
@@ -32,14 +29,9 @@ async def cb_handler(client: Bot, query: CallbackQuery):
                     ],  [
                         InlineKeyboardButton("🤖 About", callback_data = "about"),
                         InlineKeyboardButton("🔒 Close", callback_data = "close")
-                    ]
-                    
-                ]
-            )
-        )
-        
-   
-elif data == "close":
+                    ]])
+              )
+ elif data == "close":
         await query.message.delete()
         try:
             await query.message.reply_to_message.delete()
