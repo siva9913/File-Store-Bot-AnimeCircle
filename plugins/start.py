@@ -92,10 +92,8 @@ async def start_command(client: Client, message: Message):
                     InlineKeyboardButton("🔒 Close", callback_data = "close")
                 ], [
         InlineKeyboardButton('⛩️ OUR OTHER CHANNELS ⛩️', url='https://t.me/animemoviesr/3171'),
-    ]])
-
-if 
-await message.reply_text(
+    ]])  
+        await message.reply_text(
             text = START_MSG.format(
                 first = message.from_user.first_name,
                 last = message.from_user.last_name,
@@ -107,7 +105,7 @@ await message.reply_text(
             disable_web_page_preview = True,
             quote = True
         )
-        
+       return 
      
 
    
