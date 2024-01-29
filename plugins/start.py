@@ -94,21 +94,8 @@ async def start_command(client: Client, message: Message):
         InlineKeyboardButton('⛩️ OUR OTHER CHANNELS ⛩️', url='https://t.me/animemoviesr/3171'),
     ]])
 
-if config.START_PIC:
-        await message.reply_photo(config.START_PIC, text = START_MSG.format(
-                first = message.from_user.first_name,
-                last = message.from_user.last_name,
-                username = None if not message.from_user.username else '@' + message.from_user.username,
-                mention = message.from_user.mention,
-                id = message.from_user.id
-            ),
-            reply_markup = reply_markup,
-            disable_web_page_preview = True,
-            quote = True
-        )       
-  
-else:
-         await message.reply_text(
+if 
+await message.reply_text(
             text = START_MSG.format(
                 first = message.from_user.first_name,
                 last = message.from_user.last_name,
@@ -138,8 +125,8 @@ REPLY_ERROR = """<code>Use this command as a replay to any telegram message with
 async def not_joined(client: Client, message: Message):
     buttons = [
         [
-            InlineKeyboardButton(text="JOIN GROUP", url=client.invitelink),
-            InlineKeyboardButton(text="JOIN CHANNEL", url=client.invitelink2)    
+            InlineKeyboardButton(text="JOIN CHANNEL", url=client.invitelink),
+            InlineKeyboardButton(text="JOIN GROUP", url=client.invitelink2)    
         ]
     ]
     try:
