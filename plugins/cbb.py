@@ -21,26 +21,21 @@ async def cb_handler(client: Bot, query: CallbackQuery):
             )
         )
 
-  if data == "back":
-     reply_markup = InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton("🤖 About Me", callback_data = "about"),
-                    InlineKeyboardButton("🔒 Close", callback_data = "close")
-                ], [
-        InlineKeyboardButton('⛩️ OUR OTHER CHANNELS ⛩️', url='https://t.me/animemoviesr/3171'),
-    ]])  
-        await message.reply_text(
-            text = START_MSG.format(
-                first = message.from_user.first_name,
-                last = message.from_user.last_name,
-                username = None if not message.from_user.username else '@' + message.from_user.username,
-                mention = message.from_user.mention,
-                id = message.from_user.id
-            ),
-            reply_markup = reply_markup,
+ elif data == "back":
+        await query.message.edit_text(
+            text = f"<b>○ Creator : <a href='https://t.me/shidoteshika1'>The king 🜲</a>\n○ Language : <code>Python3</code>\n○ Library : Pyrogram asyncio {__version__}</a>\n○ Support Group : <a href='https://t.me/chatbox480'>Aɴɪᴍᴇ Cɪʀᴄʟᴇ 🜲</a></b>",
             disable_web_page_preview = True,
-            quote = True
+            reply_markup = InlineKeyboardMarkup(
+                [
+                    [
+                        InlineKeyboardButton("⛩️ OUR OTHER CHANNELS ⛩️", url = "https://t.me/animemoviesr/3171")
+                    ],  [
+                        InlineKeyboardButton("🤖 About", callback_data = "about"),
+                        InlineKeyboardButton("🔒 Close", callback_data = "close")
+                    ]
+                    
+                ]
+            )
         )
         
    
