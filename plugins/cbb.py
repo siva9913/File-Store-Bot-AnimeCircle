@@ -21,7 +21,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
             )
         )
 
-  elif data == "back":
+  if data == "back":
      reply_markup = InlineKeyboardMarkup(
             [
                 [
