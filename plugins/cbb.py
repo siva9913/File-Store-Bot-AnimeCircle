@@ -14,13 +14,14 @@ async def cb_handler(client: Bot, query: CallbackQuery):
             reply_markup = InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton('🔒 Close', callback_data = "close"),
-                        InlineKeyboardButton('⬅️ Back', callback_data = "back")
+                        InlineKeyboardButton("🔒 Close", callback_data = "close"),
+                        InlineKeyboardButton("⬅️ Back", callback_data = "back")
                     ]
                 ]
             )
         )
-elif data == "back":
+
+  elif data == "back":
      reply_markup = InlineKeyboardMarkup(
             [
                 [
@@ -42,7 +43,8 @@ elif data == "back":
             quote = True
         )
         
-    elif data == "close":
+   
+elif data == "close":
         await query.message.delete()
         try:
             await query.message.reply_to_message.delete()
