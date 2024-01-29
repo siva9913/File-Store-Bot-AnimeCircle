@@ -21,7 +21,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
             )
         )
 
- elif data == "back":
+ if data == "back":
         await query.message.edit_text(
             text = f"<b>○ Creator : <a href='https://t.me/shidoteshika1'>The king 🜲</a>\n○ Language : <code>Python3</code>\n○ Library : Pyrogram asyncio {__version__}</a>\n○ Support Group : <a href='https://t.me/chatbox480'>Aɴɪᴍᴇ Cɪʀᴄʟᴇ 🜲</a></b>",
             disable_web_page_preview = True,
