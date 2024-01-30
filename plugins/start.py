@@ -94,19 +94,19 @@ async def start_command(client: Client, message: Message):
                 ], [
                     InlineKeyboardButton("🔒 Close Messages !", callback_data = "close")
     ]])  
-        await message.reply_photo(
-            photo = "https://telegra.ph/file/1b27c7a2b6a0971bbb561.jpg",
-caption = START_MSG.format(
-                first = message.from_user.first_name,
-                last = message.from_user.last_name,
-                username = None if not message.from_user.username else '@' + message.from_user.username,
-                mention = message.from_user.mention,
-                id = message.from_user.id
-            ),
-            reply_markup = reply_markup,
-            disable_web_page_preview = True,
-            quote = True
-        )
+        await message.reply(
+    text = FORCE_MSG.format(
+        first=message.from_user.first_name,
+        last=message.from_user.last_name,
+        username=None if not message.from_user.username else '@' + message.from_user.username,
+        mention=message.from_user.mention,
+        id=message.from_user.id
+    ),
+    reply_markup=InlineKeyboardMarkup(buttons),
+    quote=True,
+    disable_web_page_preview=True,
+    photo="https://telegra.ph/file/1b27c7a2b6a0971bbb561.jpg"
+)
 
         return
 
