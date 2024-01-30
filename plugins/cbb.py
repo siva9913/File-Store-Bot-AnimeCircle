@@ -24,8 +24,13 @@ InlineKeyboardButton('Aɴɪᴍᴇ Gʀᴏᴜᴘ', url = 'https://t.me/ChatBox480'
             )
         )
     elif data == "close":
-        await message.reply_text(
-            text = START_MSG.format(
+        await query.message.delete()
+        try:
+            await query.message.reply_to_message.delete()
+        except:
+            pass
+                 await message.reply_text(
+                text = START_MSG.format(
                 first = message.from_user.first_name,
                 last = message.from_user.last_name,
                 username = None if not message.from_user.username else '@' + message.from_user.username,
@@ -36,9 +41,4 @@ InlineKeyboardButton('Aɴɪᴍᴇ Gʀᴏᴜᴘ', url = 'https://t.me/ChatBox480'
             disable_web_page_preview = True,
             quote = True
         )
-        try:
-            await query.message.reply_to_message.delete()
-        except:
-            pass
-
  
