@@ -35,16 +35,10 @@ DB_NAME = os.environ.get("DATABASE_NAME", "filesharexbot")
 FORCE_SUB_CHANNEL = int(os.environ.get("FORCE_SUB_CHANNEL", "0"))
 FORCE_SUB_CHANNEL1 = int(os.environ.get("FORCE_SUB_CHANNEL1", "0"))
 
-#Start Pic
-START_PIC   = os.environ.get("START_PIC", "https://telegra.ph/file/1b27c7a2b6a0971bbb561.jpg")
-
-
 TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 
-class Txt(object):
-    # part of text configuration
-    START_TXT = """Hᴇʟʟᴏ, {first} 👋\n\n<b>I ᴀᴍ Oɴʟʏ Sᴛᴏʀᴇ ғɪʟᴇs ғᴏʀ <a href='https://t.me/chatbox480'>Aɴɪᴍᴇ Cɪʀᴄʟᴇ ™</a>\</b>"""
-
+#start message
+START_MSG = os.environ.get("START_MESSAGE", "Hᴇʟʟᴏ, {first} 👋\n\n<b>I ᴀᴍ Oɴʟʏ Sᴛᴏʀᴇ ғɪʟᴇs ғᴏʀ <a href='https://t.me/chatbox480'>Aɴɪᴍᴇ Cɪʀᴄʟᴇ ™</a>\</b>")
 try:
     ADMINS=[]
     for x in (os.environ.get("ADMINS", "").split()):
