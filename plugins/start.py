@@ -119,13 +119,13 @@ REPLY_ERROR = """<code>Use this command as a replay to any telegram message with
 #=====================================================================================##
 
     
-    
+
 @Bot.on_message(filters.command('start') & filters.private)
 async def not_joined(client: Client, message: Message):
     buttons = [
         [
-            InlineKeyboardButton(text="Jᴏɪɴ Cʜᴀɴɴᴇʟ", url=client.invitelink),
-            InlineKeyboardButton(text="Jᴏɪɴ Gʀᴏᴜᴘ", url=client.invitelink2)    
+             InlineKeyboardButton(text="Jᴏɪɴ Cʜᴀɴɴᴇʟ", url=client.invitelink),
+             InlineKeyboardButton(text="Jᴏɪɴ Gʀᴏᴜᴘ", url=client.invitelink2)    
         ]
     ]
     try:
@@ -140,7 +140,7 @@ async def not_joined(client: Client, message: Message):
     except IndexError:
         pass
 
-     await message.reply(
+    await message.reply(
         text = FORCE_MSG.format(
                 first = message.from_user.first_name,
                 last = message.from_user.last_name,
