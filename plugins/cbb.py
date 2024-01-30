@@ -19,7 +19,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
                         InlineKeyboardButton('Aɴɪᴍᴇ Cʜᴀɴɴᴇʟ', url = 'https://t.me/Animemoviesr'),
 InlineKeyboardButton('Aɴɪᴍᴇ Gʀᴏᴜᴘ', url = 'https://t.me/ChatBox480')
                     ],[
-                        InlineKeyboardButton("🔒 Close", callback_data = "close")
+                        InlineKeyboardButton("🔒 Close 🔒", callback_data = "close")
                     ]
                 ]
             )
