@@ -85,13 +85,13 @@ async def start_command(client: Client, message: Message):
                 pass
         return
     else:
-        @Client.on_message(filters.private & filters.command("start"))
-async def start(client, message):
-    user = message.from_user
-    await db.add_user(client, message)                
-    button = InlineKeyboardMarkup([[
-        InlineKeyboardButton('🎛 Aʙᴏᴜᴛ', callback_data='about'),
-        InlineKeyboardButton('🛠 Hᴇʟᴩ', callback_data='help')
+        reply_markup = InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton("🤖 About Me", callback_data = "about"),
+                    InlineKeyboardButton("🔒 Close", callback_data = "close")
+                ], [
+        InlineKeyboardButton('⛩️ OUR OTHER CHANNELS ⛩️​', url='https://t.me/animemoviesr/3171'),
     ]])
     if Config.START_PIC:
         await message.reply_photo(Config.START_PIC, caption=Txt.START_TXT.format(user.mention), reply_markup=button)       
